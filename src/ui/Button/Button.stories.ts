@@ -1,24 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from './Text';
+import { fn } from '@storybook/test';
+import { Button } from './Button';
 
 const meta = {
-  title: 'ui/Text',
-  component: Text,
+  title: 'ui/Button',
+  component: Button,
   tags: ['autodocs'],
-} satisfies Meta<typeof Text>;
+  args:{onClick: fn()},
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Hello Amigos"
+    label: "Click me",
   },
 };
 
 export const Secondary: Story = {
     args: {
-        children: "Hola!"
+        label: "Leave me",
       },
 };
 
