@@ -1,21 +1,50 @@
+import { useState } from "react";
 import "./App.css";
 import { Button, Text } from "./ui";
 
 const textContent = "Suchar dnia!";
 
 const jokes = [
-  { id:1, label: "Poniedziałek", jokeText: "Zart 1" },
-  { id:2, label: "Wtorek", jokeText: "Zart 2" },
-  { id:3, label: "Środa", jokeText: "Zart 3" },
+  {
+    id: 1,
+    label: "Poniedziałek",
+    jokeText: "Co mówi ogrodnik do ogrodnika? Przesadziłeś.",
+    className: "bg-red-700",
+  },
+  {
+    id: 2,
+    label: "Wtorek",
+    jokeText: "Jak się wita mleko? Mlekovita.",
+    className: "bg-green-700",
+  },
+  {
+    id: 3,
+    label: "Środa",
+    jokeText: "Jak jest mur po francusku? Lemur.",
+    className: "bg-blue-800",
+  },
 ];
 
 function App() {
+  const [color, setColor] = useState<boolean>(false);
+
   return (
     <>
       <Text>{textContent}</Text>
       <>
         {jokes.map((joke, key) => {
-          return <Button key={joke.id} label={joke.label} onClick={() => alert(joke.jokeText)} />;
+          return (
+            <>
+              <Button
+                key={joke.id}
+                label={joke.label}
+                onClick={() => setColor(!color)}
+                className={joke.className}
+              />
+
+              {color ? <p>{joke.jokeText}</p> : null}
+            </>
+          );
         })}
       </>
     </>
