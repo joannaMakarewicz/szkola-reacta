@@ -12,15 +12,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Red: Story = {
   args: {
-    label: "Click me",
+    label: "Poniedziałek",
   },
 };
 
-export const Secondary: Story = {
+export const Green: Story = {
     args: {
-        label: "Leave me",
+        label: "Wtorek",
       },
 };
+
+export const Blue: Story = {
+    args: {
+        label: "Środa",
+      },
+};
+
+export const Disabled: Story = {
+    args: {
+        label: "Środa",
+      },
+};
+
+
 
