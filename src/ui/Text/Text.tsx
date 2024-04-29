@@ -4,6 +4,6 @@ type TextProps = {
 
 export const Text = ({ children} :TextProps) => {
     return (
-        <p>{children}</p>
+        <p className="text-center p-3 font-medium text-lg tracking-wide">{children}</p>
     )
 }

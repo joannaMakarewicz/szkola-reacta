@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Button, Text } from "./ui";
 
@@ -26,28 +25,22 @@ const jokes = [
 ];
 
 function App() {
-  const [color, setColor] = useState<boolean>(false);
-
   return (
-    <>
+    <main className="bg-green-500 p-4">
       <Text>{textContent}</Text>
       <>
         {jokes.map((joke, key) => {
           return (
-            <>
-              <Button
-                key={joke.id}
-                label={joke.label}
-                onClick={() => setColor(!color)}
-                className={joke.className}
-              />
-
-              {color ? <p>{joke.jokeText}</p> : null}
-            </>
+            <Button
+              key={joke.id}
+              label={joke.label}
+              onClick={() => alert(joke.jokeText)}
+              className={joke.className}
+            />
           );
         })}
       </>
-    </>
+    </main>
   );
 }
 
