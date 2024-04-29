@@ -27,7 +27,7 @@ const jokes = [
 function App() {
   return (
     <main className="bg-teal-700 p-6 min-h-96 flex-col justify-center content-center">
-      <Text>{textContent}</Text>
+      <Text className="text-slate-50 uppercase text-center">{textContent}</Text>
       <>
         {jokes.map((joke, key) => {
           return (

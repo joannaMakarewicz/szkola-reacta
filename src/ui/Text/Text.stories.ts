@@ -12,13 +12,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Hello Amigos"
+    children: "Przykładowy tekst",
   },
 };
 
 export const Secondary: Story = {
     args: {
-        children: "Hola!"
+        children: "Przykładowy tekst z ramką",
+        className:"border w-fit"
       },
 };
 
